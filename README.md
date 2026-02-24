@@ -3,8 +3,9 @@ Web-API for [adviceslip.com](https://adviceslip.com) website to get random advic
 
 ## Example
 ```python
-import advice_slip
-advice_slip = advice_slip.AdviceSlip()
+from advice_slip import AdviceSlip
+
+advice_slip = AdviceSlip()
 random_advice = advice_slip.get_random_advice()
 print(random_advice)
 ```
