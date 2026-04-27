@@ -5,15 +5,17 @@ class AdviceSlip:
 		self.api = "https://api.adviceslip.com"
 		self.session = Session()
 		self.session.headers = {
-			"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
+			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 		}
 
+	def _get(self, endpoint: str) -> dict:
+		return self.session.get(f"{self.api}{endpoint}").json()
+		
 	def get_random_advice(self) -> dict:
-		return self.session.get(f"{self.api}/advice").json()
+		return self._get("/advice")
 
 	def get_advice_by_id(self, slip_id: int) -> dict:
-		return self.session.get(f"{self.api}/advice/{slip_id}").json()
+		return self._get(f"/advice/{slip_id}")
 
 	def search_advice(self, query: str) -> dict:
-		return self.session.get(
-			f"{self.api}/advice/search/{query}").json()
+		return self._get(f"/advice/search/{query}")
