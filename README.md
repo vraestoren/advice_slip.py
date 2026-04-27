@@ -1,4 +1,4 @@
-# <div><img src="https://adviceslip.com/app/img/touch-icon-iphone.png" width="40" /> advice_slip.py
+# <div align="center"><img src="https://adviceslip.com/app/img/touch-icon-iphone.png" width="40" /> advice_slip.py
 
 > Web-API for [Advice Slip](https://adviceslip.com) a REST API that serves random pieces of advice, searchable by keyword or retrievable by ID.
 
